@@ -8,7 +8,7 @@ namespace ToDoList
     public static void Main()
     {
       List<Item> toDoList = new List<Item>() { };
-      Console.WriteLine("Welcome to your ToDo list. Press 1 to add an item. Press 2 to view your list");
+      Console.WriteLine("Welcome to your ToDo list. Press 1 to add an item. Press 2 to view your list.");
       string response = Console.ReadLine();
 
       if (response == "1")
@@ -52,6 +52,16 @@ namespace ToDoList
       //Console.WriteLine(newItem.Description);//must do .Description to access details
       //Code for allowing the user to enter multiple items  - continual prompt for entering more items
       //code to show the entire list of items
+
+      // Dictionary<int, string> dictionary = new Dictionary<int, string>();
+      // int key = 1;
+      // dictionary.Add(key, "asdf");
+      // if (dictionary.ContainsKey(1))
+      // {
+      //   dictionary[key];
+      // }
+      // Console.WriteLine(value);
+
     }
   }
 }
