@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ToDoList
+namespace ToDoList.Models
 {
   public class Item
   {
