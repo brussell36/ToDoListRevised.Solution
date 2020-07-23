@@ -6,8 +6,13 @@ using System;
 namespace ToDoList.Tests
 {
   [TestClass]
-  public class CategoryTest
+  public class CategoryTest : IDisposable
   {
+    public void Dispose()
+    {
+      Category.ClearAll();
+    }
+
     [TestMethod]
     public void CategoryConstructor_CreatesInstanceOfCategory_Category()
       {
@@ -25,5 +30,23 @@ namespace ToDoList.Tests
 
         Assert.AreEqual(1, result);
       }
+
+      [TestMethod]
+      public void GetAll_ReturnsAllCategoryObjects_CategoryList()
+      {
+        string name01 = "Work";
+        string name02 = "School";
+        Category newCategory1 = new Category(name01);
+        Category newCategory2 = new Category(name02);
+        List<Category> newList = new List<Category> { newCategory1, newCategory2 };
+
+        // string name03 = "Walk Dog";
+        // string name04 = "Feed Dog";
+        // Category sampleCategory = new Category(name03);
+        // Category sampleCategory2 = new Category(name04);
+        List<Category> result = Category.GetAll();
+
+        CollectionAssert.AreEqual(newList, result);
+      } 
   }
 }
