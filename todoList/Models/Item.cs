@@ -15,6 +15,11 @@ namespace ToDoList.Models
       Id = id;
     }
 
+    public Item(string description)
+    {
+      Description = description;
+    }
+
     public override bool Equals(System.Object otherItem)
     {
       if (!(otherItem is Item))
@@ -34,7 +39,7 @@ namespace ToDoList.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM itmes;";
+      cmd.CommandText = @"SELECT * FROM items;";
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader; 
       while (rdr.Read()) 
       {
